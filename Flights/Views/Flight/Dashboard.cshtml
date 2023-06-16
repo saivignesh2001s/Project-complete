@@ -1,0 +1,117 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<head>
+
+</head>
+<style>
+.article{
+  width:250px;
+  height:120px;
+ background: #1a73e8;
+  float:left;
+  margin:5px;
+ color:white;
+  
+}
+.article1 {
+        width: 337px;
+        height: 200px;
+        background: #1a73e8;
+        float: left;
+        margin: 5px;
+        color:black;
+    }
+
+    .article2 {
+        width: 510px;
+        height: 120px;
+        background: #1a73e8;
+        float: left;
+        margin: 5px;
+        color: white;
+    }
+.imgg{
+    width:50px;
+    height:50px;
+}
+
+    .grid-container {
+        display: inline-grid;
+        grid-template-columns:auto auto auto auto;
+        grid-row-gap: 25px;
+        grid-column-gap: 100px;
+        padding: 10px;
+    }
+</style>
+<body style="background-color:deepskyblue">
+    <h2 style=" color:brown;text-align:center">DASHBOARD</h2>
+  
+    <div class="container">
+
+        <span class="article"> &nbsp;&nbsp;No. of flights expected to <b> depart </b>  &nbsp;&nbsp;in an hour:&nbsp;&nbsp;<center><h1>@ViewBag.Countdeparture</h1></center></span>
+        <span class="article" style="background:rgba(252,185,0,1);"> &nbsp;&nbsp;  No. of flights expected to <b>arrive</b> &nbsp;&nbsp; in an hour:&nbsp;&nbsp;<center><h1>@ViewBag.CountArrival</h1></center></span>
+        <span class="article" style="background:rgb(251,105,98)">  &nbsp;&nbsp; First flight to depart from  &nbsp;&nbsp;now:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<center><h1>@ViewBag.DepartString</h1></center></span>
+        <span class="article" style="background:#6AB187">  &nbsp;&nbsp; First flight to arrive from  &nbsp;&nbsp;now:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<center><h1>@ViewBag.ArrivalString</h1></center></span>
+      
+    </div>
+    <br />
+    <div class="container">
+        
+        <span class="article1" style="background:#0693e3">
+            <br />
+           <center><img src="~/css/FastBook.png" class="imgg" /></center><br />
+            <h3><b> &nbsp;&nbsp;FAST BOOKING</b></h3>
+            &nbsp;&nbsp;We offer fast booking, fantastic products, &nbsp;&nbsp;competitive pricing & amazing experience.
+            
+
+        </span>
+        &nbsp;
+        <span class="article1" style="background:#0693e3">
+            <br />
+            <center><img src="~/css/Deals.png" class="imgg" /></center><br />
+            <h3><b> &nbsp;&nbsp;EXCITING DEALS</b></h3>
+            &nbsp;&nbsp;Enjoy exciting deals on flights, tour packages and more.
+
+
+        </span>
+        &nbsp;
+        <span class="article1" style="background:#0693e3">
+            <br />
+            <center><img src="~/css/support.png" class="imgg" /></center><br />
+            <h3><b> &nbsp;&nbsp;24/7 SUPPORT</b></h3>
+            &nbsp;&nbsp;Get assitance 24/7 on any kind of travel related query.
+
+
+        </span>
+        
+
+    </div>
+   
+    <div class="container">
+
+        <span class="article2" style="background:rgb(2,3,129)">
+           &nbsp;&nbsp; To import your data:
+            <center> @Html.ActionLink("Import data","Upload","Flight",null,new {@class="btn btn-primary"})</center><br />
+          </span>
+       
+        <span class="article2" style="background:rgb(2,3,129)">
+            &nbsp;&nbsp; To add your custom flight data:
+            <center> @Html.ActionLink("Add Flight","AddFlight","Flight",null,new {@class="btn btn-primary"})</center><br />
+        </span>
+
+
+
+       
+        
+    </div>
+    @if (ViewBag.Msgs == "Present")
+    {
+        <div style="float:right">
+            @Html.ActionLink("Go to list","Flightlist","Flight",null,new {@class="btn btn-primary"})
+
+        </div>
+    }
+</body>

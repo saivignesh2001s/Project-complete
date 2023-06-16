@@ -1,0 +1,16 @@
+flightid,departure_destination,arrival_destination,departure_date,arrival_date
+MAA1001,Chennai,Bangalore,6/14/2023 13:20,6/14/2023 15:15
+MAA1002,Chennai,Madurai,6/14/2023 13:40,6/14/2023 15:40
+DEL1200,Delhi,London,6/13/2023 18:00,6/14/2023 14:00
+VNS1321,Varanasi,Chennai,6/14/2023 16:00,6/14/2023 20:20
+DFW1202,Dallas,Los Angeles,6/15/2023 7:00,6/15/2023 9:15
+SIN1697,Singapore,New York,6/15/2023 10:00,6/16/2023 14:00
+BNA2300,Nashville,Sydney,6/16/2023 15:00,6/17/2023 1:00
+CJB1209,Coimbatore,Cochin,6/16/2023 16:00,6/16/2023 19:20
+MAA1012,Hyderabad,Goa,6/17/2023 8:00,6/17/2023 9:40
+DAL1233,Dallas,Istanbul,6/17/2023 15:00,6/18/2023 13:00
+SAF1450,Banglore,Singapore,6/14/2023 13:45,6/15/2023 19:45
+BNA2302,London,Nashville,6/16/2023 8:00,6/16/2023 20:10
+CJB1210,Goa,Coimbatore,6/16/2023 6:00,6/16/2023 8:30
+MAA1012,Chennai,Lucknow,6/16/2023 4:00,6/16/2023 7:30
+DAL1235,Delhi,Kochin,6/17/2023 10:00,6/17/2023 18:00

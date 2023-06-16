@@ -1,0 +1,46 @@
+﻿@model Flights.Models.Fileupload
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Externalstyles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-0"> </div>
+            <div class="col-md-0"></div>
+                <h2 class="class3" style="padding-inline-start:40px;">UPLOAD CSV FILE</h2>
+                <p style="padding:5px; margin:5px"></p>
+
+            <form method="post" enctype="multipart/form-data" asp-controller="Flight" asp-action="Upload">
+                <div class="form-group">
+                    <div class="col-md-10">
+                       
+                        <input type="file" name="file" asp-for="filename" required/>
+                    </div>
+                </div>
+             
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <div class="contain">
+                            <button type="submit" class="btn btn-primary" class="btn">Upload</button>
+                     <!-- <input type="submit" value="Upload" class="btn" class="btn btn-danger"/>-->
+                     @if(ViewBag.Msg=="True"){
+                                <div class="btn"> @Html.ActionLink("Back to list","Flightlist","Flight",null,new {@class="btn btn-primary"})</div>
+                            }
+                            else
+                            {
+                                <div class="btn"> @Html.ActionLink("Dashboard","Dashboard","Flight",null,new {@class="btn btn-primary"})</div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </form>
+          
+
+<b><p style="color:red">@ViewBag.Message1</p></b>
+<p style="color:red"><b>@ViewBag.Message2</b></p>
+</div>
+</div>
+</body>
+ 

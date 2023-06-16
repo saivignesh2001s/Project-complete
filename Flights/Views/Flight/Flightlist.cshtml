@@ -1,0 +1,120 @@
+﻿@model IEnumerable<Flights.Models.Domain.FlightData>
+@{
+
+}
+<style>
+    .grid-container {
+        display: inline-grid;
+        grid-template-columns: auto auto auto auto auto;
+        grid-row-gap: 25px;
+        grid-column-gap: 100px;
+        padding: 10px;
+    }
+</style>
+
+   
+   
+        <body style="background-color:deepskyblue">
+        <h2 style=" color:brown;text-align:center">LIST OF FLIGHT DETAILS </h2>
+        <div class="grid-container">
+            <div class="grid-item">@Html.ActionLink("Import data","Upload","Flight",null,new {@class="btn btn-primary"})</div>
+            <div class="grid-item">@Html.ActionLink("Add Flight","AddFlight","Flight",null,new {@class="btn btn-primary"})</div>
+
+            <div class="grid-item">@Html.ActionLink("Delete All","DeleteAll","Flight",null,new {@class="btn btn-primary",onclick="return Confirmmessage1()"})</div>
+
+
+
+            <form method="get" enctype="multipart/form-data" asp-controller="Flight" asp-action="Flightlist">
+
+                <!--  <div class="form-group">
+                <div class="col-md-10">
+                <div class="grid-item">
+                <input type="text" id="search" name="id"  /></div>
+                </div>-->
+
+
+
+                <!--<div class="form-group" >
+
+                <div class="grid-item">
+
+                <button type="submit" class="btn btn-danger" >Search</button>
+                </div>
+
+
+
+                </div>
+                </div>-->
+                <!-- <input type="submit" value="Upload" class="btn" class="btn btn-danger"/>-->
+                <div class="grid-item">
+                    <input type="text" id="search" name="id" />
+
+                    <button type="submit" class="btn btn-danger">Search</button>
+                </div>
+
+            </form>
+            <div class="grid-item">
+                @Html.ActionLink("Export as csv","Export1","Flight",null,new {@class="btn btn-primary"})
+            </div>
+            
+
+        </div>
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Flight Id</th>
+                    <th scope="col">Depart Destination</th>
+                    <th scope="col">Arrival Destination</th>
+                    <th scope="col">Depart Time</th>
+                    <th scope="col">Arrival Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var f in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem=>f.flightid)</td>
+                        <td>@Html.DisplayFor(modelItem=>f.departure_destination)</td>
+                        <td>@Html.DisplayFor(modelItem=>f.arrival_destination)</td>
+                        <td>@Html.DisplayFor(modelItem=>f.departure_date)</td>
+                        <td>@Html.DisplayFor(modelItem=>f.arrival_date)</td>
+
+                        <td>@Html.ActionLink("Edit","Viewflight",new{id=f.id},new { @class="btn btn-primary"})</td>
+
+                        <td>@Html.ActionLink("Delete","Deleteflight",new{id=f.id},new { @class="btn btn-primary",onclick="return Confirmmessage()"})</td>
+
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div> @Html.ActionLink("Dashboard","Dashboard","Flight",null,new {@class="btn btn-primary"})</div>
+    }
+    </body>
+    
+   
+
+     
+    
+    <script>
+    function Confirmmessage(){
+        var alert=confirm("Are you sure to delete details");
+        if(alert){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    function Confirmmessage1() {
+        var alert = confirm("Are you sure to delete all?");
+        if (alert) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+</script>

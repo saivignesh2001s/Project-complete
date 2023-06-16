@@ -1,0 +1,44 @@
+﻿@model Flights.Models.Login
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page with Background Image Example</title>
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true">
+    <link rel="preconnect" href="https://fonts.googleapis.com" asp-append-version="true" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin  asp-append-version="true"/>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap" rel="stylesheet" asp-append-version="true" />
+
+
+</head>
+<header>
+    <marquee style="color:darkblue; font-family: 'DM Sans' , sans-serif;"><h1>Welcome to Black Knights Airlines</h1></marquee>
+</header>
+<body>
+    <div class="bg">
+        <!-- partial:index.partial.html -->
+        <form method="post" asp-action="Login" asp-controller="Home">
+            <div class="form-field">
+                <input type="email" placeholder="Email / Username" asp-for="username" required />
+            </div>
+
+            <div class="form-field">
+                <input type="password" asp-for="password" placeholder="Password" required />
+            </div>
+
+            <div class="form-field">
+                <button class="btn" type="submit">Log in</button>
+            </div>
+            <b><p style="color:red;">@ViewBag.Message</p></b>
+              
+        </form>
+    </div>
+
+    <!-- partial -->
+
+</body>
+<footer>
+</footer>
+</html>
